@@ -12,7 +12,7 @@ const Habitaciones = ({ hotelId }) => {
   useEffect(() => {
     // Obtener las habitaciones para un hotel específico
     axios
-      .get(`http://127.0.0.1:8000/api/hoteles/${hotelId}/habitaciones`)
+      .get(`https://backend-laravel-production-664f.up.railway.app/api/hoteles/${hotelId}/habitaciones`)
       .then((response) => setHabitaciones(response.data))
       .catch((error) => console.error('Error fetching habitaciones:', error));
   }, [hotelId]);
@@ -20,7 +20,7 @@ const Habitaciones = ({ hotelId }) => {
   const handleCrearHabitacion = (e) => {
     e.preventDefault();
     axios
-      .post(`http://127.0.0.1:8000/api/hoteles/${hotelId}/habitaciones`, nuevaHabitacion)
+      .post(`https://backend-laravel-production-664f.up.railway.app/api/hoteles/${hotelId}/habitaciones`, nuevaHabitacion)
       .then((response) => {
         setHabitaciones([...habitaciones, response.data]);
         setNuevaHabitacion({ tipo_id: '', acomodacion_id: '', numero: '' });

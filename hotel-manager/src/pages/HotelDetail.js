@@ -12,7 +12,7 @@ function HotelDetail() {
   useEffect(() => {
     // Llamada a la API para obtener los detalles del hotel
     axios
-      .get(`http://127.0.0.1:8000/api/hoteles/${hotelId}`) // Ajusta la URL de la API
+      .get(`https://backend-laravel-production-664f.up.railway.app/api/hoteles/${hotelId}`) // Ajusta la URL de la API
       .then((response) => {
         setHotel(response.data); // Establece los datos del hotel
         setRooms(response.data.habitaciones || []); // Asegúrate de que habitaciones esté presente

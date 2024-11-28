@@ -16,14 +16,14 @@ const AddRoomForm = ({ hotelId }) => {
   useEffect(() => {
     // Llamadas a la API para cargar datos de tipos de habitación y acomodaciones
     axios
-      .get("http://127.0.0.1:8000/api/tipos-habitacion")
+      .get("https://backend-laravel-production-664f.up.railway.app/api/tipos-habitacion")
       .then((response) => setRoomTypes(response.data))
       .catch((error) =>
         console.error("Error al cargar los tipos de habitación:", error)
       );
 
     axios
-      .get("http://127.0.0.1:8000/api/acomodaciones")
+      .get("https://backend-laravel-production-664f.up.railway.app/api/acomodaciones")
       .then((response) => setAcomodaciones(response.data))
       .catch((error) =>
         console.error("Error al cargar las acomodaciones:", error)
@@ -41,7 +41,7 @@ const AddRoomForm = ({ hotelId }) => {
     e.preventDefault();
     try {
       await axios.post(
-        `http://127.0.0.1:8000/api/hoteles/${hotelId}/habitaciones`,
+        `https://backend-laravel-production-664f.up.railway.app/api/hoteles/${hotelId}/habitaciones`,
         formData
       );
       setSuccessMessage("Habitación agregada exitosamente.");

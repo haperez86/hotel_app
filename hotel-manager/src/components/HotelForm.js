@@ -22,7 +22,7 @@ function HotelForm() {
     e.preventDefault();
     try {
       // Realizar la solicitud POST a la API
-      const response = await axios.post('http://127.0.0.1:8000/api/hoteles', {
+      const response = await axios.post('https://backend-laravel-production-664f.up.railway.app/api/hoteles', {
         nombre: formData.name,
         direccion: formData.address,
         ciudad: formData.city,

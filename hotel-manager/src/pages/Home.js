@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import HotelList from '../components/HotelList';
-import HotelForm from '../components/HotelForm';
 import { Link } from 'react-router-dom';
 
 function Home() {
@@ -10,7 +9,7 @@ function Home() {
   useEffect(() => {
     // Llamada a la API para obtener la lista de hoteles
     axios
-      .get('http://127.0.0.1:8000/api/hoteles/') // Cambiar esta URL por la de tu backend
+      .get('https://backend-laravel-production-664f.up.railway.app/api/hoteles/') // Cambiar esta URL por la de tu backend
       .then((response) => setHotels(response.data))
       .catch((error) => console.error('Error fetching hotels:', error));
   }, []);
